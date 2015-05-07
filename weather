@@ -1,0 +1,19 @@
+#! /usr/bin/env node
+
+var commander = require('commander');
+
+// console.log(process.argv);
+
+commander
+  .version('0.0.1')
+  .option('-c, --celsius', 'Report temperature in celsius')
+  .option('-f, --fahrenheit', 'Report temperature in fahrenheit')
+  .parse(process.argv);
+
+  var currentTemp = 80;
+
+  if (commander.celsius) {
+    currentTemp = (currentTemp - 32) / 1.8;
+  }
+
+  console.log('It is currently ' + currentTemp + '° in Portland.');

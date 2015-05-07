@@ -1,0 +1,21 @@
+#! /usr/bin/env node
+
+var commander = require('commander');
+
+commander
+  .version('0.0.1')
+  .option('-m, --morning', 'Say good morning to the person')
+  .option('-e, --evening', 'Say good evening to the person')
+  .parse(process.argv);
+
+if (commander.morning) {
+  console.log('Good morning!');
+}
+
+if (commander.evening) {
+  console.log('Good evening!');
+}
+
+else {
+  console.log('Hello there!');
+}
